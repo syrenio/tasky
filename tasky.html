@@ -1,0 +1,18 @@
+<head>
+    <title>tasky</title>
+</head>
+
+<body>
+    <h1>Welcome to Meteor!</h1> {{> teams}}
+</body>
+<template name="teams">
+	<form class="team-add">
+		<input id="team-text" type="text" name="name" value="" placeholder="Team name">
+		<button type="submit">Add</button>
+	</form>
+    <ul>
+        {{#each teams}}
+        <li>{{this.name}}</li>
+        {{/each}}
+    </ul>
+</template>
