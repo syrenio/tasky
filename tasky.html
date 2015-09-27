@@ -1,18 +1,24 @@
 <head>
-    <title>tasky</title>
+  <title>tasky</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <h1>Welcome to Meteor!</h1> {{> teams}}
+  <h1>Welcome to Meteor!</h1>
+  <div>{{> user}}</div>
+  <div>{{> teams}}</div>
 </body>
+<template name="user">
+  {{Meteor.userId}}
+</template>
 <template name="teams">
-	<form class="team-add">
-		<input id="team-text" type="text" name="name" value="" placeholder="Team name">
-		<button type="submit">Add</button>
-	</form>
-    <ul>
-        {{#each teams}}
-        <li>{{this.name}}</li>
-        {{/each}}
-    </ul>
+  <form class="team-add">
+    <input id="team-text" type="text" name="name" value="" placeholder="Team name">
+    <button type="submit">Add</button>
+  </form>
+  <ul>
+    {{#each teams}}
+    <li>{{this.name}}</li>
+    {{/each}}
+  </ul>
 </template>
